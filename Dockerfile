@@ -14,8 +14,8 @@ COPY telewater telewater
 
 COPY README.md LICENSE pyproject.toml poetry.lock entrypoint.py ./
 
-RUN poetry install
+RUN poetry lock [--no-update]
 
-RUN poetry lock --no-update
+RUN poetry install
 
 CMD poetry run python -u entrypoint.py
