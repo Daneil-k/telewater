@@ -16,4 +16,6 @@ COPY README.md LICENSE pyproject.toml poetry.lock entrypoint.py ./
 
 RUN poetry install
 
+RUN poetry lock [--no-update]
+
 CMD poetry run python -u entrypoint.py
